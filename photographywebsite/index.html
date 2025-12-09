@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Andrew Gadd | Professional Photographer</title>
+  <base href="https://www.andrewgaddphotography.com/">
+  <link rel="canonical" href="https://www.andrewgaddphotography.com/">
+
+  <style>
+    :root {
+      --sage-green: #89a27d;
+      --sage-green-dark: #6f8865;
+      --cream: #f7f4ec;
+      --text-dark: #2f3430;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* Header & Navigation */
+
+    header {
+      background: var(--sage-green);
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .site-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .site-title a {
+      color: inherit;
+      text-decoration: none;
+      display: inline-block;
+      padding: 2px 4px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 999px;
+      transition: background 0.2s ease, transform 0.1s ease;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-1px);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px 40px;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    /* Home (top) */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-text p {
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+    }
+
+    .hero-highlight {
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.8rem;
+      color: var(--sage-green-dark);
+    }
+
+    .hero-card {
+      border-radius: 24px;
+      background: white;
+      padding: 24px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .hero-card h2 {
+      margin-bottom: 16px;
+      font-size: 1.2rem;
+    }
+
+    .hero-links {
+      display: grid;
+      gap: 10px;
+    }
+
+    .hero-links a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-decoration: none;
+      background: var(--cream);
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      border: 1px solid transparent;
+      transition: background 0.15s ease, transform 0.1s ease, border-color 0.15s ease;
+    }
+
+    .hero-links a span {
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
+    .hero-links a:hover {
+      background: white;
+      border-color: var(--sage-green);
+      transform: translateY(-1px);
+    }
+
+    /* Gallery sections */
+
+    .page-title {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .page-subtitle {
+      margin-bottom: 30px;
+      max-width: 620px;
+      font-size: 0.98rem;
+      opacity: 0.9;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .photo-slot {
+      position: relative;
+      border-radius: 20px;
+      background: white;
+      border: 1px solid rgba(137, 162, 125, 0.5);
+      padding: 10px;
+      min-height: 180px;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .photo-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+      display: block;
+    }
+
+    .slot-caption {
+      margin-top: 4px;
+      font-size: 0.8rem;
+      text-align: center;
+      color: rgba(0, 0, 0, 0.6);
+    }
+
+    /* Footer */
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      padding: 16px 10px 24px;
+      color: rgba(0, 0, 0, 0.55);
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      background: var(--cream);
+    }
+
+    /* Responsive tweaks */
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="site-title"><a href="https://www.andrewgaddphotography.com">Andrew Gadd</a></div>
+    <nav>
+      <ul>
+        <!-- These links jump to each section on the page -->
+        <li><a href="#home">Home</a></li>
+        <li><a href="#outdoor">Outdoor</a></li>
+        <li><a href="#urban">Urban</a></li>
+        <li><a href="#portraits">Portraits</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HOME / HERO -->
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <p class="hero-highlight">Professional Photography</p>
+        <h1>Timeless images in sage &amp; cream tones.</h1>
+        <p>
+          Andrew Gadd is a professional photographer specializing in outdoor landscapes,
+          modern urban scenes, and intimate portraits. Explore the galleries and
+          imagine your story brought to life through the lens.
+        </p>
+        <p>
+          Use the links below to open the Outdoor, Urban, and Portrait pages
+          (each with six image holders ready for your photos).
+        </p>
+      </div>
+
+      <aside class="hero-card">
+        <h2>Explore the Galleries</h2>
+        <div class="hero-links">
+          <a href="#outdoor">
+            <strong>Outdoor Collection</strong>
+            <span>Nature, light, and open spaces</span>
+          </a>
+          <a href="#urban">
+            <strong>Urban Collection</strong>
+            <span>City lines and modern textures</span>
+          </a>
+          <a href="#portraits">
+            <strong>Portrait Collection</strong>
+            <span>Storytelling through faces</span>
+          </a>
+        </div>
+      </aside>
+    </section>
+
+    <!-- OUTDOOR PAGE -->
+    <section id="outdoor">
+      <h2 class="page-title">Outdoor Collection</h2>
+      <p class="page-subtitle">
+        Landscapes, natural light, and quiet spaces. Replace the six placeholder
+        images below with your own outdoor photography.
+      </p>
+
+      <div class="gallery-grid">
+        <!-- 6 Outdoor image holders -->
+        <div>
+          <div class="photo-slot">
+            <img src="https://via.placeholder.com/600x400?text=Outdoor+01" alt="Outdoor 01 placeholder" />
+          </div>
+          <div class="slot-caption">Outdoor 01</div>
+        </div>
+
+        <div>
+          <div class="photo-slot">
+            <img src="https://via.placeholder.com/600x400?text=Outdoor+02" alt="Outdoor 02 placeholder" />
+          </div>
+          <div class="slot-caption">Outdoor 02</div>
+        </div>
+
+        <div>
+          <div class="photo-slot">
+            <img src="https://via.placeholder.com/600x400?text=Outdoor+03" alt="Outdoor 03 placeholder" />
+          </div>
+          <div class="slot-caption">Outdoor 03</div>
+        </div>
+
+        <div>
+          <div class="photo-slot">
+            <img src="https://via.placeholder.com/600x400?text=Outdoor+04" alt="Outdoor 04 placeholder" />
+          </div>
+          <div class="slot-caption">Outdoor 04</div>
+        </div>
+
+        <div>
+          <div class="photo-slot">
+            <img src="https://via.placeholder.com/600x400?text=Outdoor+05" alt="Outdoor 05 placeholder" />
+          </div>
+          <div class="slot-caption">Outdoor 05</div>
+        </div>
+
+        <div>
+          <div class="photo-slot">
+            <img src="https://via.placeholder.com/600x400?text=Outdoor+06" alt="Outdoor 06 placeholder" />
+          </div>
+          <div class="slot-caption">Outdoor 06</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- URBAN PAGE -->
+    <section id="urban">
+      <h2 class="page-title">Urban Collection</h2>
+      <p class="page-subtitle">
+        Architecture, streets, and modern details. Replace these six holders with
+        urban scenes and city textures.
+      </p>
+
+      <div class="gallery-grid">
+        <!-- 6 Urban image holders -->
+        <div>
+          <div class="photo-slot">
+            <img src="https://via.placeholder.com/600x400?text=Urban+01" alt="Urban 01 placeholder" />
+          </div>
+          <div class="slot-caption">Urban 01</div>
+        </div>
+
+        <div>
+          <div class="photo-slot">
+            <img src="https://via.placeholder.com/600x400?text=Urban+02" alt="Urban 02 placeholder" />
+          </div>
+          <div class="slot-caption">Urban 02</div>
+        </div>
+
+        <div>
+          <div class="photo-slot">
+            <img src="https://via.placeholder.com/600x400?text=Urban+03" alt="Urban 03 placeholder" />
+          </div>
+          <div class="slot-caption">Urban 03</div>
+        </div>
+
+        <div>
+          <div class="photo-slot">
+            <img src="https://via.placeholder.com/600x400?text=Urban+04" alt="Urban 04 placeholder" />
+          </div>
+          <div class="slot-caption">Urban 04</div>
+        </div>
+
+        <div>
+          <div class="photo-slot">
+            <img src="https://via.placeholder.com/600x400?text=Urban+05" alt="Urban 05 placeholder" />
+          </div>
+          <div class="slot-caption">Urban 05</div>
+        </div>
+
+        <div>
+          <div class="photo-slot">
+            <img src="https://via.placeholder.com/600x400?text=Urban+06" alt="Urban 06 placeholder" />
+          </div>
+          <div class="slot-caption">Urban 06</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTRAITS PAGE -->
+    <section id="portraits">
+      <h2 class="page-title">Portrait Collection</h2>
+      <p class="page-subtitle">
+        Faces, emotion, and connection. Replace the placeholders below with
+        your portrait work.
+      </p>
+
+      <div class="gallery-grid">
+        <!-- 6 Portrait image holders -->
+        <div>
+          <div class="photo-slot">
+            <img src="https://via.placeholder.com/600x400?text=Portrait+01" alt="Portrait 01 placeholder" />
+          </div>
+          <div class="slot-caption">Portrait 01</div>
+        </div>
+
+        <div>
+          <div class="photo-slot">
+            <img src="https://via.placeholder.com/600x400?text=Portrait+02" alt="Portrait 02 placeholder" />
+          </div>
+          <div class="slot-caption">Portrait 02</div>
+        </div>
+
+        <div>
+          <div class="photo-slot">
+            <img src="https://via.placeholder.com/600x400?text=Portrait+03" alt="Portrait 03 placeholder" />
+          </div>
+          <div class="slot-caption">Portrait 03</div>
+        </div>
+
+        <div>
+          <div class="photo-slot">
+            <img src="https://via.placeholder.com/600x400?text=Portrait+04" alt="Portrait 04 placeholder" />
+          </div>
+          <div class="slot-caption">Portrait 04</div>
+        </div>
+
+        <div>
+          <div class="photo-slot">
+            <img src="https://via.placeholder.com/600x400?text=Portrait+05" alt="Portrait 05 placeholder" />
+          </div>
+          <div class="slot-caption">Portrait 05</div>
+        </div>
+
+        <div>
+          <div class="photo-slot">
+            <img src="https://via.placeholder.com/600x400?text=Portrait+06" alt="Portrait 06 placeholder" />
+          </div>
+          <div class="slot-caption">Portrait 06</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Andrew Gadd. All rights reserved.
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
